@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Weather app </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename="main.css")}}">
+</head>
+<style>
+  #main-footer
+    {
+      color: #FFFFFF;
+      font-family: "Segoe UI";
+      background: #2B2B2B;
+      text-align: center;
+      margin-top: 75px;
+      padding: 16px;
+      bottom: 8px;
+    }
+
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+ }
+
+ td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px;
+ }
+
+ tr:nth-child(even) {
+  background-color: #dddddd;
+ }
+  </style>
+<body>
+
+	
+
+	<div class="container" style= "text-align: left; margin-top: 2px" >
+    <div style=" margin-top: 2px">
+   </div>
+
+  <h3>Location Details :</h3>
+    <p><b>Country</b> : {{data["count"]}} <b>Local Time</b> : {{data["local_time"]}} </p> 
+    <p><b>Latitude</b> : {{data["lat"]}}  <b>Longitude</b> : {{data["lon"]}}</p>
+    <p><b>Observation Time</b> : {{data["observation_time"]}}</p>
+    <hr>
+
+	<h3>Weather Details :</h3>
+    <table>
+  
+  <tr>
+    <th>Temperature</th>
+    <td>{{ data["temp"]}} Celsius</td>
+    
+  </tr>
+  <tr>
+    <th>Pressure</th>
+    <td>{{data["pressure"]}} mb</td>
+    
+  </tr>
+  <tr>
+    <th>Humidity</th>
+    <td>{{data["humidity"]}} %</td>
+    
+  </tr>
+  <tr>
+    <th>Precipitation</th>
+    <td>{{data["precipitation"]}}</td>
+    
+  </tr>
+  <tr>
+    <th>Cloud Cover</th>
+    <td>{{data["cloud_cover"]}}</td>
+    
+  </tr>
+  <tr>
+    <th>Wind_mph</th>
+    <td>{{data["wind_mph"]}} km/hr</td>
+    
+  </tr>
+ <tr>
+    <th>Wind Direction</th>
+    <td>{{data["wind_dir"]}}</td>
+    
+  </tr>
+</table>
+
+
+	  
+</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <footer id="main-footer">
+      By Vanitha H
+    </footer>
+</body>
+</html>
